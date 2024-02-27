@@ -1,0 +1,28 @@
+border 종류 찾아보기
+명령어 다시 복습
+collapse- *테이블의 닿는 곳에 1개의 선만 존재
+caption - 테이블의 제목
+th - table header
+tr - 테이블의 행을 나눠준다.
+
+===코드정렬 버튼은 shift + alt + F 키===
+
+행 열의 같은 내용을 합칠 때는 rowspan ="차지할 칸의 수"
+            <!-- 2번째 행 -->
+            <tr>
+                <td rowspan="2">선물용</td>
+                <td>3kg</td>
+                <td>11~16과</td>
+                <td>35,000원</td>
+            </tr>
+             <!-- 3번째 행 -->
+            <tr>
+                <td>5kg</td>
+                <td>18~26과</td>
+                <td>52,000원</td>
+            </tr>
+
+width 넓이
+height 높이
+
+이미지 불러올 때 - <img src="이미지 주소 or 경로">
