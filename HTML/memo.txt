@@ -1,3 +1,5 @@
+02.27(화)
+
 border 종류 찾아보기
 명령어 다시 복습
 collapse- *테이블의 닿는 곳에 1개의 선만 존재
@@ -7,7 +9,7 @@ tr - 테이블의 행을 나눠준다.
 
 ===코드정렬 버튼은 shift + alt + F 키===
 
-행 열의 같은 내용을 합칠 때는 rowspan ="차지할 칸의 수"
+--행 열의 같은 내용을 합칠 때는 rowspan ="차지할 칸의 수"
             <!-- 2번째 행 -->
             <tr>
                 <td rowspan="2">선물용</td>
@@ -25,4 +27,26 @@ tr - 테이블의 행을 나눠준다.
 width 넓이
 height 높이
 
-이미지 불러올 때 - <img src="이미지 주소 or 경로">
+--이미지 불러올 때 - <img src="이미지 주소 or 경로">
+
+하나로 묶어서 관리하고 싶을 때.
+   #container{
+            width: 800px;
+            margin:0 auto;/*가운데 위치하게 해준다*/
+        }
+        선언 후 묶고싶은 부분에 
+        <div id="container">"묶고싶은 내용"</div>
+        을 넣어주면 된다.
+
+-비디오 삽입 후 실행시
+<video src="파일의 경로,주소" controls width="700"></video>
+//크기 설정시 ex)controls width="700" 넣어주어야 한다.
+ <video src="파일의 경로,주소" autoplay muted loop width="700"></video>
+ //auto 플레이를 원하지 않는다면 autoplay muted loop 제거
+
+ -mp3 파일 삽입
+ <embed src="파일의 경로,주소">
+
+ -오디오 파일 삽입
+ <audio src="파일의 경로,주소" controls></audio>
+
