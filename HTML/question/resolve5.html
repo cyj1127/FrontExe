@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        #container {
+            width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>회원 가입을 환영합니다</h1>
+        <form>
+            <fieldset>
+                <legend>사용자 정보</legend>
+                <ul>
+                    <label for="id"><b>아이디</b></label>
+                    <input type="text" name="uid" id="id" placeholder="4자 ~ 10자 사이, 공백없이" required>
+                </ul>
+                <ul>
+                    <label for="mail"><b>이메일</b></label>
+                    <input type="text" name="umail" id="mail">
+                </ul>
+                <ul>
+                    <label for="pwd1"><b>비밀번호</b></label>
+                    <input type="password" name="upwd1" id="pwd1" placeholder="문자와 숫자, 특수 기호 포함"required>
+                </ul>
+                <ul>
+                    <label for="pwd2"><b>비밀번호 확인</b></label>
+                    <input type="password" name="upwd2" id="pwd2"required>
+                </ul>
+                <ul>
+                    <label for="route"><b>가입경로</b></label>
+                    <select id="route">
+                        <option value="blog">블로그</option>
+                        <option value="search">검색</option>
+                        <option value="sns">SNS</option>
+                        <option value="etc">기타</option>
+                    </select>
+                </ul>
+                <ul>
+                    <label for="memo"><b>메모</b></label>
+                    <textarea name="memo" id="memo" cols="30" rows="10"></textarea>
+                </ul>
+            </fieldset>
+        </form>
+        <form>
+
+            <fieldset>
+                <legend>이벤트와 새로운 소식</legend>
+                <input type="radio" name="radio">
+                <label for="mailOk">메일 수신o</label>
+                <input type="radio" name="radio">
+                <label for="mailNo">메일 수신x</label>
+            </fieldset>
+        </form>
+        <div>
+            <input type="submit" value="주문하기">
+            <input type="reset" value="취소하기">
+        </div>
+    </div>
+</body>
+
+</html>

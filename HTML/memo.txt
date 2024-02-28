@@ -50,3 +50,35 @@ height 높이
  -오디오 파일 삽입
  <audio src="파일의 경로,주소" controls></audio>
 
+ 02.28(수)
+
+ -form은 데이터를 묶어서 서버에 전달할 때 사용한다.
+ <form>묶고싶은 데이터<form>
+ 26,27 예제는 같은 데이터를 갖게 된다.
+ lable과 input을 나눠서 써도 되고 lable 안에 input을 넣어서 써줘도 된다!
+ input의 데이터는 다양하다.
+ 
+ form action=""에 들어가는 값은 해당 위치로 데이터를 전송해준다.(예제27참조)
+
+ min, max 를 통해 값을 제한할 수 있다.
+ value 값은 초기값 설정.
+
+ -form의 method 방식은 get, post 두 가지 방식이 있다.
+
+
+-hidden은 화면에 보이지 않게 한다.
+-autofocus 실행시키면 자동으로 포커스를 가게 하겠다.
+-required 반드시 입력해야한다. 공백 xxxx
+-placeholder 입력하기 전 칸 안에 연하게 써있는 글씨. ex)하이픈(-) 빼고 입력하세요.
+-readonly value을 수정할 수 없고 읽기전용으로 만들어준다.
+option의 selected 는 기본으로 선택되어있게 할 수 있다.
+
+-textarea 메모를 적어야 하는 칸을 만들 때 사용한다.
+
+-blockquote 들여쓰기 기능이다.
+
+
+ 
+
+ 
+
