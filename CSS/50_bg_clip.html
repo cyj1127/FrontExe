@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .desc{
+            border: 5px dotted #222;
+            background-color: #ffd9a0;
+            width: 350px;
+            padding: 20px;
+            margin-right: 20px;
+            float: left;
+        }
+        #clip-border{
+            background-clip: border-box;
+        }
+        #clip-padding{
+            background-clip: padding-box;
+        }
+        #clip-content{
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="desc" id="clip-border">
+            <p>쌍떡잎식물 이판화군 장미목 장미과의 여러해살이풀. 잎자루는 길고 비교적 큰 3개의 잎이 달리며 각각은 둥글고 가장자리가 톱니 모양이다.</p>
+            <p>봄에 몇 개의 <em>꽃자루가 나와</em> 몇 개에서 십수 개의 흰색 꽃이 달리는데 <b>꽃잎</b>이 다섯개이고 암술과 수술이 노란색이다.</p>
+        </div>
+        <div class="desc" id="clip-padding">
+            <p>쌍떡잎식물 이판화군 장미목 장미과의 여러해살이풀. 잎자루는 길고 비교적 큰 3개의 잎이 달리며 각각은 둥글고 가장자리가 톱니 모양이다.</p>
+            <p>봄에 몇 개의 <em>꽃자루가 나와</em> 몇 개에서 십수 개의 흰색 꽃이 달리는데 <b>꽃잎</b>이 다섯개이고 암술과 수술이 노란색이다.</p>
+        </div>
+        <div class="desc" id="clip-content">
+            <p>쌍떡잎식물 이판화군 장미목 장미과의 여러해살이풀. 잎자루는 길고 비교적 큰 3개의 잎이 달리며 각각은 둥글고 가장자리가 톱니 모양이다.</p>
+            <p>봄에 몇 개의 <em>꽃자루가 나와</em> 몇 개에서 십수 개의 흰색 꽃이 달리는데 <b>꽃잎</b>이 다섯개이고 암술과 수술이 노란색이다.</p>
+        </div>
+    </div>
+</body>
+</html>
