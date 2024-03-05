@@ -338,3 +338,191 @@ ex)intro라는 id로 이동함.
         li.new::after{
             content: "NEW!";
             font-size: x-small;
+
+
+========================================= 03.05(화)===============================================
+
+
+-이동 translate(84예제)
+ex)#movex:hover{transform:translateX(50px);}
+        #movey:hover{transform:translateY(50px);}
+        #movexy:hover{transform:translate(10px,20px);}
+
+-확장 scale(85예제)
+ex)#scalex:hover{transform:scalex(2);}
+        #scaley:hover{transform:scaley(1.5);}
+        #scale:hover{transform:scale(0.7);}
+
+-회전 rotate(86예제)
+rotate:hover에 효과.
+ ex)transform: rotate(40deg);
+
+ -원근감 perspective(87예제)
+ ex).rotatex:hover{transform:rotateX(50deg) ;}
+        #pers{perspective:300px;}
+
+-3차원회전(88예제)
+.origin > div{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            transition: all 3s; /*3초 동안 회전하도록 트랜지션 적용*/
+        }
+#rotatex:hover{transform: rotateX(55deg);}
+#rotatey:hover{transform: rotateY(55deg);}
+#rotatez:hover{transform: rotateZ(55deg);}
+#rotatexyz:hover{transform: rotate3d(2.5,1.2,-1.5,55deg);} /*x,y,z 축의 방향 벡터, 회전*/
+
+-skew(비스듬히 움직이다, 왜곡하다)(89,90예제)
+#skewx:hover{transform: skewx(55deg);}
+        #skewy:hover{transform: skewy(55deg);}
+        #skewxy:hover{transform: skew(-25deg,-15deg);}
+
+-transition(91예제)
+transition-property: width,height; /*트랜지션 대상 - 너비, 높이*/
+transition-duration: 2s,1s; /*트랜지션 시간- 2초,1초*/
+property를 준 다음 duration으로 대상별 걸리는 시간도 따로 입력해야함!!
+
+.box:hover{ (마우스 올려놓을 시 해당 크기만큼 변한다!,hover의 속성)
+            width: 200px;
+            height: 120px;
+        }
+
+-애니메이션 효과(94,95예제)
+animation-duration: 3s;
+animation-iteration-count: infinite;
+
+ /*shape은 애니메이션 정의*/
+        @keyframes shape{
+            from{
+                border: 1px solid transparent; /* 1px 투명한 테두리*/
+            }to{
+                border: 1px solid #000;
+                border-radius: 50%;
+            }
+        }
+
+-애니메이션의 조금더 매끄러운 연결을 위해서는
+@keyframes rotate{
+            from{transform: perspective(120px) rotateX(0deg) rotateY(0deg);}
+            50%{transform: perspective(120px) rotateX(-180deg) rotateY(0deg);}
+            to{transform: perspective(120px) rotateX(0deg) rotateY(-180deg);}
+        }
+위 처럼 50%지점의 값도 넣어주게 되면 매끄러워진다.
+
+animation-iteration-count: infinite;를 주게되면 무한반복을 하게된다!!!!
+
+-transition-timing-function 종류(애니메이션)
+linear : 선형으로 변화, 처음부터 끝까지 속도가 동일하다.
+ease : 처음에 천천히 시작하여 빨라지며 마지막에 다시 느려진다.
+ease-in : 처음에 천천히 시작하여 마지막에 속도가 올라가고 끝난다.
+ease-out : 처음에 빠른속도에서 시작하여 마지막에 천천히 속도를 줄여 끝남.
+ease-in-out : 천천히 시작되어 정상 속도가 되었다가 마지막에 느려진다.
+
+-  모바일 기기를 위한 viewport 설정
+    이 설정을 안하면 pc화면의 내용 -> 모바일 화면 : 글자가 작아진다.
+
+    viewport 개념 전 : px, %
+    viewport 개념 후 : px, %
+                        vw : 1vw = 뷰포트 너비의 1%,ex) 100vw : 화면 너비와 동일
+                        vh : 1vh = 뷰포트 높이의 1%
+                        vmin : 뷰포트의 너비와 높이 중에서 작은 값의 1%와 같다
+                        vmax : 뷰포트의 너비와 높이 중에서 큰 값의 1%와 같다.
+
+-mediaquery(02예제)
+어떤 스타일을 선택적으로 적용하고 싶을 때 사용한다. 다른 프로그래밍 언어의
+if 조건문과 비슷한 개념이라고 생각하면 이해가 쉽다.
+ex) @media (조건){
+    스타일
+}
+스타일 부분에는 일반적인 css 코드가 들어가는데, 조건 부분이 만족될 때는
+스타일이 적용되고, 만족되지 않을 때는 스타일이 무시된다.
+
+-display:flex
+/*display:flex 는 주축과 교차축이 존재한다.
+일단 주축을 정해주면 수직방향은 자동으로 교차축이 된다.
+container 같은 부분에 display:flex를 입력하고
+따로 밑의 코드처럼 추가해주면 된다.
+   
+#opt1{flex-direction: row;}
+#opt2{flex-direction: row-reverse;}
+#opt3{flex-direction: column;}
+#opt4{flex-direction: column-reverse;}
+       
+row: 가로를 주축, 좌->우, 기본값
+row-reverse : 가로를 주축, 우->좌
+column: 세로를 주축, 상->하, 기본값
+column-reverse : 가로를 주축, 하->상
+    
+
+-css속성에서 display:flex는 요소들을 간단하게 가로 또는 세로방향으로
+정렬할 수 있습니다. 주의사항은 각 요소들의 부모요소에 display:flex
+설정을 해야한다는 것입니다.
+
+-flex-wrap의 속성값들(https://blog.naver.com/pjh445/221160742046)
+nowrap : 부모 넓이에 맞게 요소들의 넓이를 강제 축소
+wrap : 부모 넓이보다 요소들의 총 넓이가 크다면 나머지 요소들을
+        다음줄로 바꿈
+wrap-reverse : 줄바꿈 하는 요소들을 역순으로 배열
+initial : 기본값(nowrap)
+inherit : 부모요소의 설정값을 사용
+
+-flex-flow = flex-direction + flex-wrap*/
+
+-justify-content 시작위치, 간격을 설정해준다.(06)
+flex-direction이 row일때는 왼쪽에서, column일때는 위에서 정렬된다.
+
+center:아이템들을 가운데로 정렬한다.
+space-between:아이템들의 "사이"에 균일한 간격을 만들어준다.
+space-around:아이템들의 "둘레"에 균일한 간격을 만들어준다.
+space-evenly:아이템들의 사이와 양 끝에 일정한 간격을 만들어준다.
+
+ex)
+#opt1{justify-content: flex-start;}
+#opt2{justify-content: flex-end;}
+#opt3{justify-content: center;}
+
+-align-items(세로 교차축)
+#opt4{align-items: baseline;} /* 문자 기준선에 맞춰 배치*/
+#opt5{align-items: stretch;} /*항목을 늘려준다(스트레칭 !)*/
+
+-align-self
+전체가 아닌 교차축의 정렬을 개별적으로 설정하고 싶을 때 사용한다.
+ <div class="container">
+        <div class="box" id="box1"><p>1</p></div>
+        <div class="box"><p>2</p></div>
+        <div class="box" id="box3"><p>3</p></div>
+        <div class="box"><p>4</p></div>
+    </div> 의 경우 box1,box3만 따로 스타일을 만들어 값을 주는 경우에
+    align-self를 사용해서 바꿔준다!!
+
+-align-content
+주축에서 줄바꿈이 되어 여러 줄로 표현될 때 교차축의 항목간의 간격 지정
+(2줄 이상일 때 사용한다.)
+flex-wrap:no wrap의 경우 줄바꿈이 되지 않기 때문에 align-content는
+사용이 불가능하다. flex-wrap:wrap일 경우에는 화면 크기에 맞춰 줄바꿈이
+자동으로 되므로 사용이 가능하다.
+
+-grid(11~17 예제)
+flex와 마찬가지로, grid는 컨테이너에 display:grid;를 설정하는 것으로
+시작한다.
+ex).container{
+    display:grid;
+}
+
+ grid-template-areas:
+                "box1 box1 box1"
+                "box2 box3 box3"
+                "box2 . box4"
+                해당 형태로 위치를 지정해주어 그대로 나타낼 수 있다.
+
+
+-사이트 맵 만드는 법 ~~~***
+구글링 하면 돼~~!!
+
+-와이어 프레임
+
+-transparent
+border에서 투명한 프레임을 적용해준다.(white와는 다르다!!)
+
+
