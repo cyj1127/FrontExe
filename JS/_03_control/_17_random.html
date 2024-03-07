@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // cosnt button = document.getElementById('btnStart');  //아이디가 btnStart인 것을 찾아라
+            const button = document.querySelector('#btnStart'); //btnStart가 포함된 것을 찾아라
+            button.addEventListener('click', () => {
+                const luckyVal = parseInt(Math.random() * 10 + 1); //1~10의 난수 발생/소수점이기 때문에 10을 굽해준다
+                switch (luckyVal) {
+                    case 3:
+                        break;
+                    document.write('아이패드 당첨!')
+                    case 5:
+                    document.write('전원주택 당첨!')
+                        break;
+                    case 7:
+                    document.write('포르쉐 당첨!')
+                        break;
+                    default:
+                        break;
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btnStart">추첨</button>
+</body>
+
+</html>

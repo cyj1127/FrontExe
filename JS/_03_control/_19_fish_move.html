@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #panel {
+            width: 600px;
+            height: 400px;
+            border: 3px solid #999;
+            position: relative;
+        }
+
+        #fish {
+            position: absolute;
+            left: 200px;
+            top: 150px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fish = document.getElementById('fish')    //id가 fish인 element를 가져와라.
+            let left = 200;
+            let top = 150;
+            document.addEventListener('keydown', function (e) {
+                switch (e.keyCode) {
+                    case 37:
+                        left -= 10; //좌
+                        fish.style.left = left + 'px'
+                        break;
+                    case 39:
+                        left += 10; //우
+                        fish.style.left = left + 'px'
+                        break;
+                    case 38:
+                        top -= 10;  //상
+                        fish.style.top = top + 'px'
+                        break;
+                    case 40:
+                        top += 10;  //하
+                        fish.style.top = top + 'px'
+                        break;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="panel">
+        <img src="../../images2/fish.png" id="fish">
+    </div>
+</body>
+
+</html>
