@@ -609,3 +609,26 @@ let result =0;
 
 -prompt는 값을 입력받을 수 있는 창이 나온다.
 alert를 사용하면 입력받은 내용을 다시 창으로 띄워준다.
+
+
+----조건문----
+ const date = new Date()
+        const hour = date.getHours()
+
+        if (hour < 12)
+            alert('오전')
+        else
+            alert('오후')
+
+ //삼항연산자
+        const input = prompt('숫자입력',"")
+        const number = Number(input)
+
+        const result = (number >= 0) ? '0 이상의 숫자입니다.' : '0보다 작은 숫자입니다.'
+        alert(result)            
+
+    true || console.log('실행될까요???????????')
+        
+        false || console.log('실행되나요~?>~~?~>~?~>~?')
+
+        2번만 실행이 된다...
