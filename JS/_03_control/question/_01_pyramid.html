@@ -7,11 +7,15 @@
     <title>Document</title>
     <script>
 
+        //숫자 입력받기
         const num = prompt('숫자를 입력하세요', 0);
 
+        //입력받은 만큼 세로줄 출력
         for (let i = 1; i <= num; i++) {
+        //밑으로 갈수록 줄어들게 공백 추가
             for (let j = num - i; j > 0; j--) {
                 document.write("&nbsp;");
+        //반복 할 별의 개수 
             } for (let k = 1; k <= (i * 2) - 1; k++) {
                 document.write('*');
             }
